@@ -36,6 +36,11 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+	    </plugin>
+	    <plugin>
+            	<groupId>org.sonarsource.scanner.maven</groupId>
+            	<artifactId>sonar-maven-plugin</artifactId>
+            	<version>4.4.0.5183</version>
             </plugin>
         </plugins>
     </build>
