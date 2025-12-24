@@ -16,16 +16,19 @@ pipeline {
 		
 		
 		
-	 stage('sonar') {
-            steps {
-                echo 'scanning project'
-                sh 'ls -ltr'
-                
-                sh ''' mvn sonar:sonar \\
-                      -Dsonar.host.url=http://52.66.200.202:9000 \\
-                      -Dsonar.login=sqa_b3c20caaefc4d049ed0735e4b68082be2673fa30'''
-            }
-    	}
+	stage('sonar') {
+    steps {
+        echo 'Scanning project'
+        sh 'ls -ltr'
+
+        sh '''
+            mvn clean verify sonar:sonar -U \
+            -Dsonar.host.url=http://52.66.200.202:9000 \
+            -Dsonar.login=sqa_b3c20caaefc4d049ed0735e4b68082be2673fa30
+        '''
+    }
+}
+
 		
 		
 		
